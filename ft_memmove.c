@@ -20,7 +20,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		while (len > 0)
 		{
-			((char *)dst)[len -1] = ((const char *)src)[len - 1];
+			((char *)dst)[len -1] = ((const char *)src)[len - 1]; // Sanki  aşağıdaki ile yer değiştirmeli gibi!!
 			len--;
 		}
 	}

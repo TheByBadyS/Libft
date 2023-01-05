@@ -19,7 +19,7 @@ void *ft_mem(void *dst, const void *src, size_t n)
     {
         while (n != '0')
         {
-            (char *)dst[i] = (const char *)src[i];
+            ((char *)dst)[i] = ((const char *)src)[i];
             i++;
             n--;
         }

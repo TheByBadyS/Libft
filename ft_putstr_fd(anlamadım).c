@@ -6,11 +6,11 @@
 /*   By: toaktas <toaktas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 17:42:54 by toaktas           #+#    #+#             */
-/*   Updated: 2022/11/23 17:45:02 by toaktas          ###   ########.fr       */
+/*   Updated: 2023/01/03 17:18:13 by toaktas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd) // fd ne işe yarıyor? !!!
 {
-	write(fd, s, ft_strlen(s));
+	write(fd, s, ft_strlen(s)); // Neden strlen var? !!!
 }

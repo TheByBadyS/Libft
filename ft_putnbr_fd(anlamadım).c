@@ -6,11 +6,11 @@
 /*   By: toaktas <toaktas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 17:47:36 by toaktas           #+#    #+#             */
-/*   Updated: 2022/11/23 17:47:39 by toaktas          ###   ########.fr       */
+/*   Updated: 2023/01/03 17:19:59 by toaktas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd) // fd ne işe yarıyor? !!!
 {
 	if (n == -2147483648)
 	{

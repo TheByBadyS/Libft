@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter(anlamadım).c                            :+:      :+:    :+:   */
+/*   ft_strtrim(anlamadım).c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toaktas <toaktas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/24 17:28:23 by toaktas           #+#    #+#             */
-/*   Updated: 2022/12/06 17:20:06 by toaktas          ###   ########.fr       */
+/*   Created: 2022/11/23 16:02:40 by toaktas           #+#    #+#             */
+/*   Updated: 2023/01/03 16:58:05 by toaktas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	if (!lst || !f)
-		return ;
-	while (lst)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
-}
-void	fnc(void *v)
-{
-	char *x;
+	size_t	i;
 
-	x = v;
-
-	*x += 1;
-}
-
-int main()
-{
-	t_list *lst;
-
-	*lst = malloc(sizeof(t_list));
-	*lst->content = "tolga";
-	*lst->next = NULL;
-
-	ft_lstiter(lst, &fnc);
+	if (!s1 || !set)
+		return (NULL);
+	while (*s1 && ft_strchr(set, *s1)) // Neden *s1 böyle yazılır ve strchr ders değer verilmemiş mi !!!
+		s1++;
+	i = ft_strlen(s1);
+	while (i && ft_strchr(set, s1[i])) // Aynı sorun !!
+		i--;
+	return (ft_substr(s1, 0, i + 1));
 }

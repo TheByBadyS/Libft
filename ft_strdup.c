@@ -20,3 +20,10 @@ char	*ft_strdup(const char *s1)
 	ft_memcpy(dst, s1, ft_strlen(s1) + 1);
 	return (dst);
 }
+int main(void)
+{
+	char	*str;
+
+	str = "Merhaba dünya!";
+	printf(ft_strdup(str));
+}

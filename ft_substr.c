@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_substr(anlamadım).c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toaktas <toaktas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 14:54:36 by toaktas           #+#    #+#             */
-/*   Updated: 2023/01/03 16:48:55 by toaktas          ###   ########.fr       */
+/*   Created: 2022/11/23 14:37:35 by toaktas           #+#    #+#             */
+/*   Updated: 2023/01/03 16:41:51 by toaktas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	size_t	j;
-	char	*ss;
+	char	*str;
 
-	ss = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!s1 || !s2 || !ss)
+	if (s == 0)
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (s1[i])
-	{
-		ss[i] = s1[i];
-		i++;
-	}
-	while (s2[j])
-	{
-		ss[i++] = s2[j++]; // ++ yerine i++; ve j++; olarak bir satır eklenebilir !!
-	}
-	ss[i] = '\0';
-	return (ss);
+	if (ft_strlen(s) < start)
+		return (ft_strdup("")); // Buna ihtiyaç yok gibi!!!
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	str = malloc(len + 1);
+	if (str == 0)
+		return (NULL);
+	while (i < len)
+		str[i++] = s[start++]; // Değiştirile bilir mi bak!!!
+	str[i] = '\0';
+	return (str);
 }

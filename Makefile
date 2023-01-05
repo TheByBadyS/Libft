@@ -6,7 +6,7 @@
 #    By: toaktas <toaktas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 14:51:29 by toaktas           #+#    #+#              #
-#    Updated: 2022/11/30 16:12:43 by toaktas          ###   ########.fr        #
+#    Updated: 2022/12/02 16:36:49 by toaktas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,9 @@ B_OBJ	= $(BSRC:%.c=%.o)
 all: $(NAME)
 
 bonus: $(B_OBJ)
+	ar -rcs $(NAME) $(OBJ)
+
+$(NAME):	$(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
 clean:
