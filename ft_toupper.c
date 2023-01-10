@@ -3,22 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: toaktas <toaktas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 15:28:19 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/31 15:28:19 by marvin           ###   ########.fr       */
+/*   Created: 2023/01/10 18:35:02 by toaktas           #+#    #+#             */
+/*   Updated: 2023/01/10 18:35:02 by toaktas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int ft_toupper(int c)
 {
-    int i;
-
-    i = 0;
-    while (c[i] >= 97 && c[i] <= 122)
-    {
-        c[i] -= 32;
-        i++;
-    }
-    return(c);
+	if (c > 96 && c < 123)
+		return (c - 32);
+	else
+		return (c);
 }

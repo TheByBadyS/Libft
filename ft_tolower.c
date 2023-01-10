@@ -3,22 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: toaktas <toaktas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 15:34:40 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/31 15:34:40 by marvin           ###   ########.fr       */
+/*   Created: 2023/01/10 18:42:50 by toaktas           #+#    #+#             */
+/*   Updated: 2023/01/10 18:42:50 by toaktas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int ft_tolower(int c)
 {
-    int i;
-
-    i = 0;
-    while (c[i] >= 65 && c[i] <= 90)
-    {
-        c[i] += 32;
-        i++;
-    }
-    return(c);
+	if (c > 64 && c < 91)
+		return (c + 32);
+	else
+		return (c);
 }

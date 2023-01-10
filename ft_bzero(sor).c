@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy(kontrol).c                              :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toaktas <toaktas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 11:41:27 by toaktas           #+#    #+#             */
-/*   Updated: 2022/11/21 11:41:27 by toaktas          ###   ########.fr       */
+/*   Created: 2023/01/10 13:14:09 by toaktas           #+#    #+#             */
+/*   Updated: 2023/01/10 13:14:09 by toaktas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Lib/libft.h"
+#include <stdio.h>
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+void ft_bzero(void *s, size_t n)
+/*{
+    unsigned int    i;
+
+    i = 0;
+    if (s != 0)
+    {
+        while (n != '0')
+        {
+            ((unsigned char *)s)[i] = '\0';
+            i++;
+            n--;
+        }
+    }
+}*/
+
 {
-	size_t	size;
-	size_t	i;
+    ft_memset(s, '\0', n);
+}
 
-	if (dst == 0 || src == 0)
-		return (0);
-	size = ft_strlen(src);
-	i = 0;
-	if (dstsize != 0)
-	{
-		while (src[i] != '\0' && i < (dstsize - 1))
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
-	}
-	return (size);
+int main()
+{
+    char    str[7] = "hello";
+    char    *str1 = *(char *)ft_bzero(str, 50);
+    printf("%s", str1);
 }
